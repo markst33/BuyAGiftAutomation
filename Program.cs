@@ -6,6 +6,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
+
 namespace BuyAGiftAutomation
 {
     class MainClass
@@ -13,6 +14,11 @@ namespace BuyAGiftAutomation
     {
         static IWebDriver driver = new ChromeDriver();
        
+        //I understand that under normal circumstances there would be different classes/files for Page Objects and methods.
+        //However as this is well into Object Oriented Programming I am just writing the tests within the Program.cs
+        //I also appreciate that under normal circumstances there should be a minimum of time assigned to thread.sleep
+
+        //Would need more time to delve into creating Logging. Had a look at Log4J but it all seems to be for Java not C#
 
         
         public static void Main()
@@ -21,6 +27,7 @@ namespace BuyAGiftAutomation
             //Navigate to Homepage
             string url = "https://www.buyagift.co.uk/";
             driver.Navigate().GoToUrl(url);
+            
 
             
             //Find Searchbar and enter text
@@ -35,10 +42,18 @@ namespace BuyAGiftAutomation
             AssertLibrary.Assert.IsEqual(ProductPrice.Text, Price);
             Thread.Sleep(3000);
 
+            //Having an issue here as this never fails regardless of what value I put in.
+            //Would normally ask a senior automation guy for assistance
+
+
 
             //Click on 1st Product in listing
             IWebElement ProductName = driver.FindElement(By.ClassName("search-product-name"));
             ProductName.Click();
+
+            //Having an issue here where there are 2 pop ups and sometimes they appear and sometimes they don't.
+            //When they do appear the test fails here as it can't find the next web element
+
 
 
             //Wait for product page to load and click Buy
@@ -65,6 +80,9 @@ namespace BuyAGiftAutomation
             //Check that No delivery price has been added and the correct Price is retained
             var TotalCost = driver.FindElement(By.CssSelector("#basket_summary > div > div.animate-fadeIn.ng-scope > div.holder.ng-scope > div > div.row.final_totals > span.cost_price.col-xs-4.ng-binding"));
             AssertLibrary.Assert.IsEqual(ProductPrice.Text, TotalCost.Text);
+
+            //Once again not sure if assertion is correct. Would seek assistance here
+
 
 
             //Click Pay Securely
@@ -100,10 +118,26 @@ namespace BuyAGiftAutomation
             IWebElement ChooseAddress = driver.FindElement(By.CssSelector("#new_card_selectaddress > ul > li.row.newcard_newaddress.subpanel-inner > div > div > div > div > div.form-group.postcodesearchlist > div.col-xs-12.col-sm-8.nopadding.highlighted-field-onload.highlighted-field-fadedaway > select"));
             ChooseAddress.Click();
 
+            //Ran into problem here as I could not inspect the list of addresses to choose one.
+            //I would normally speak with one of the senior Automation Guys to help me
 
 
-
-
+            //Enter Card Details
+            IWebElement CardName = driver.FindElement(By.CssSelector("#cardholdername"));
+            CardName.SendKeys("Test User");
+            IWebElement CardNo = driver.FindElement(By.CssSelector("#cardnumber"));
+            CardNo.SendKeys("1234123412341234");
+            IWebElement ExpiryMonthDropdown = driver.FindElement(By.CssSelector("#expirymonth"));
+            ExpiryMonthDropdown.Click();
+            IWebElement ExpiryMonth = driver.FindElement(By.CssSelector("#expirymonth > option:nth-child(4)"));
+            ExpiryMonth.Selected();
+            IWebElement ExpiryYearDropdown = driver.FindElement(By.CssSelector("#expiryyear"));
+            ExpiryYearDropdown.Click();
+            SelectElement(By.CssSelector("#expiryyear > option:nth-child(3)"));
+            IWebElement CV2 = driver.FindElement(By.CssSelector("#expiryyear > option:nth-child(3)"));
+            CV2.SendKeys("123");
+            IWebElement PlaceOrderBtn = driver.FindElement(By.CssSelector("#btnPlaceOrderButton"));
+            PlaceOrderBtn.Click();
 
 
 
