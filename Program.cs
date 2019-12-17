@@ -5,7 +5,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
-
+using System.IO;
+using log4net;
+using System.Reflection;
 
 namespace BuyAGiftAutomation
 {
@@ -13,19 +15,22 @@ namespace BuyAGiftAutomation
 
     {
         static IWebDriver driver = new ChromeDriver();
-       
+
         //I understand that under normal circumstances there would be different classes/files for Page Objects and methods.
         //However as this is well into Object Oriented Programming I am just writing the tests within the Program.cs
         //I also appreciate that under normal circumstances there should be a minimum of time assigned to thread.sleep
 
-        //Would need more time to delve into creating Logging. Had a look at Log4J but it all seems to be for Java not C#
+        //Trying to get log4Net set up to do the logging but having difficulty
 
-        
+
+        private static readonly ILog _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         public static void Main()
 
         {
             //Navigate to Homepage
             string url = "https://www.buyagift.co.uk/";
+            _log.Info("Navigate to Website");
             driver.Navigate().GoToUrl(url);
             
 
@@ -50,6 +55,7 @@ namespace BuyAGiftAutomation
             //Click on 1st Product in listing
             IWebElement ProductName = driver.FindElement(By.ClassName("search-product-name"));
             ProductName.Click();
+            
 
             //Having an issue here where there are 2 pop ups and sometimes they appear and sometimes they don't.
             //When they do appear the test fails here as it can't find the next web element
@@ -130,14 +136,7 @@ namespace BuyAGiftAutomation
             IWebElement ExpiryMonthDropdown = driver.FindElement(By.CssSelector("#expirymonth"));
             ExpiryMonthDropdown.Click();
             IWebElement ExpiryMonth = driver.FindElement(By.CssSelector("#expirymonth > option:nth-child(4)"));
-            ExpiryMonth.Selected();
-            IWebElement ExpiryYearDropdown = driver.FindElement(By.CssSelector("#expiryyear"));
-            ExpiryYearDropdown.Click();
-            SelectElement(By.CssSelector("#expiryyear > option:nth-child(3)"));
-            IWebElement CV2 = driver.FindElement(By.CssSelector("#expiryyear > option:nth-child(3)"));
-            CV2.SendKeys("123");
-            IWebElement PlaceOrderBtn = driver.FindElement(By.CssSelector("#btnPlaceOrderButton"));
-            PlaceOrderBtn.Click();
+            
 
 
 
