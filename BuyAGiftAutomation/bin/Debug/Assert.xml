@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assert</name>
+    </assembly>
+    <members>
+        <member name="T:AssertLibrary.AssertException">
+            <summary>
+            Exception thrown when execution reaches a place in code that shouldn't.
+            </summary>
+        </member>
+        <member name="M:AssertLibrary.AssertException.#ctor(System.String)">
+            <summary>
+            Ctor.
+            </summary>
+            <param name="message">The message that describes the error</param>
+        </member>
+        <member name="T:AssertLibrary.ShouldNotReachHereException">
+            <summary>
+            Exception thrown when execution reaches a place in code that shouldn't.
+            </summary>
+        </member>
+        <member name="M:AssertLibrary.ShouldNotReachHereException.#ctor">
+            <summary>
+            Ctor.
+            </summary>
+        </member>
+        <member name="M:AssertLibrary.ShouldNotReachHereException.#ctor(System.String)">
+            <summary>
+            Ctor.
+            </summary>
+            <param name="message">The message that describes the error</param>
+        </member>
+        <member name="T:AssertLibrary.Assert">
+            <summary>
+            Asserts that some condition is met.
+            </summary>
+        </member>
+        <member name="M:AssertLibrary.Assert.HasExactly(System.Int32,System.Collections.IEnumerable,System.String)">
+            <summary>
+            Asserts that the given collection has exactly n elements.
+            </summary>
+            <param name="n">Number of elements expected</param>
+            <param name="collection">Collection to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsOfType``1(System.Object,System.String)">
+            <summary>
+            Asserts that the given value is of the given type.
+            </summary>
+            <typeparam name="T">Expected type</typeparam>
+            <param name="value">Value to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsOfType(System.Type,System.Object,System.String)">
+            <summary>
+            Asserts that the given value is of the given type.
+            </summary>
+            <param name="type">Expected type</param>
+            <param name="value">Value to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.PropertyExists(System.Object,System.String,System.String)">
+            <summary>
+            Asserts that the given property exists in the given object.
+            </summary>
+            <param name="value">Object to check</param>
+            <param name="propertyName">Name of the property to check</param>
+            <param name="variableName">Variable name to include in the error message</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotEqual(System.Object,System.Object,System.String)">
+            <summary>
+            Asserts that the given objects are not equal.
+            </summary>
+            <param name="one">Object to check</param>
+            <param name="another">The other object to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsLess(System.Int64,System.Int64,System.String)">
+            <summary>
+            Asserts that the given number is less than the specified.
+            </summary>
+            <param name="n">Number to check</param>
+            <param name="than">Value to check against</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsLess(System.Double,System.Double,System.String)">
+            <summary>
+            Asserts that the given number is less than the specified.
+            </summary>
+            <param name="n">Number to check</param>
+            <param name="than">Value to check against</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsEqual(System.Object,System.Object,System.String)">
+            <summary>
+            Asserts that the given objects are equal.
+            </summary>
+            <param name="one">Object to check</param>
+            <param name="another">The other object to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsMore(System.Int64,System.Int64,System.String)">
+            <summary>
+            Asserts that the given number is more than the specified.
+            </summary>
+            <param name="n">Number to check</param>
+            <param name="than">Value to check against</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsMore(System.Double,System.Double,System.String)">
+            <summary>
+            Asserts that the given number is more than the specified.
+            </summary>
+            <param name="n">Number to check</param>
+            <param name="than">Value to check against</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotZero(System.Int32,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotZero(System.Int64,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotZero(System.Single,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotZero(System.Double,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotZero(System.Decimal,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNegative(System.Int32,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNegative(System.Int64,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNegative(System.Single,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNegative(System.Double,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNegative(System.Decimal,System.String)">
+            <summary>
+            Asserts that the given integer is negative.
+            </summary>
+            <param name="n">Number to check if it's negative</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsPositive(System.Int32,System.String)">
+            <summary>
+            Asserts that the given number is positive.
+            </summary>
+            <param name="n">Number to check if it's positive</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsPositive(System.Int64,System.String)">
+            <summary>
+            Asserts that the given number is positive.
+            </summary>
+            <param name="n">Number to check if it's positive</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsPositive(System.Single,System.String)">
+            <summary>
+            Asserts that the given number is positive.
+            </summary>
+            <param name="n">Number to check if it's positive</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsPositive(System.Double,System.String)">
+            <summary>
+            Asserts that the given integer is positive.
+            </summary>
+            <param name="n">Number to check if it's positive</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsPositive(System.Decimal,System.String)">
+            <summary>
+            Asserts that the given number is positive.
+            </summary>
+            <param name="n">Number to check if it's positive</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsFalse(System.Boolean,System.String)">
+            <summary>
+            Asserts that the given flag is false.
+            </summary>
+            <param name="flag">Flag to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsTrue(System.Boolean,System.String)">
+            <summary>
+            Asserts that the given flag is true.
+            </summary>
+            <param name="flag">Flag to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsSingle(System.Collections.IEnumerable,System.String)">
+            <summary>
+            Asserts that the given collection have exactly one element.
+            </summary>
+            <param name="collection">Collection to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotSingle(System.Collections.IEnumerable,System.String)">
+            <summary>
+            Asserts that the given collection doesn't have exactly one element.
+            </summary>
+            <param name="collection">Collection to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotDefault``1(``0,System.String)">
+            <summary>
+            Asserts that the given object doesn't have its type's default value.
+            </summary>
+            <param name="value">Object to check</param>
+            <param name="variableName">Variable name to include in the assertion message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsNotNull(System.Object,System.String)">
+            <summary>
+            Asserts that the given object is null.
+            </summary>
+            <param name="value">Object to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.DoesNotReachHere">
+            <summary>
+            Throws ShouldntReachHereExeption.
+            </summary>
+            <exception cref="T:AssertLibrary.ShouldNotReachHereException">Always</exception>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsInEnum``1(System.Object)">
+            <summary>
+            Asserts that the given object is defined in the specified enum.
+            </summary>
+            <typeparam name="T">Enum to check if the given object is defined in it</typeparam>
+            <param name="value">Value to check if it's defined in the specified enum</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.HasMore(System.Int32,System.Collections.IEnumerable,System.String)">
+            <summary>
+            Asserts that the given collection has more than n elements.
+            </summary>
+            <param name="n">Number of elements to be more than</param>
+            <param name="collection">Collection to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.HasLess(System.Int32,System.Collections.IEnumerable,System.String)">
+            <summary>
+            Asserts that the given collection has less than n elements.
+            </summary>
+            <param name="n">Number of elements to be less than</param>
+            <param name="collection">Collection to check</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.IsIn(System.Object,System.Collections.IEnumerable,System.String)">
+            <summary>
+            Asserts that the given object is in the given collection.
+            </summary>
+            <param name="value">Value to check if it's in the collection</param>
+            <param name="collection">Collection to check if the value is in it</param>
+            <param name="variableName">Variable name to include in the error message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.HasElements(System.Collections.IEnumerable,System.String)">
+            <summary>
+            Asserts that the given collection has elements.
+            </summary>
+            <param name="collection">Collection to check</param>
+            <param name="variableName">Variable name to include in the assertion message (optional)</param>
+        </member>
+        <member name="M:AssertLibrary.Assert.UseDebug">
+            <summary>
+            Use System.Diagnostics.Debug.Assert.
+            </summary>
+        </member>
+        <member name="M:AssertLibrary.Assert.UseTrace">
+            <summary>
+            Use System.Diagnostics.Trace.Assert.
+            </summary>
+        </member>
+        <member name="M:AssertLibrary.Assert.UseException">
+            <summary>
+            Throws AssertLibrary.AssertException when needed.
+            </summary>
+        </member>
+    </members>
+</doc>
